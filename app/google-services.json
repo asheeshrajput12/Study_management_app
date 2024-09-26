@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "80846934638",
+    "project_id": "study-management-app",
+    "storage_bucket": "study-management-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80846934638:android:36d551c40a2924e277cc7f",
+        "android_client_info": {
+          "package_name": "com.personalproject.studymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80846934638-a1i4mdjqbmajqiv2hpi1ldq1s01352h4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb_acaJXTKSjPy0PBjVHLfXrQKYQ4j574"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80846934638-a1i4mdjqbmajqiv2hpi1ldq1s01352h4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
