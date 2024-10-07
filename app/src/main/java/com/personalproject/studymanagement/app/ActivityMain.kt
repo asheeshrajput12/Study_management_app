@@ -33,7 +33,7 @@ import com.personalproject.studymanagement.fragment.FragmentMyTask
 import timber.log.Timber
 
 
-class ActivityMain : AppCompatActivity() {
+class ActivityMain : AppCompatActivity(),View.OnClickListener {
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -41,6 +41,8 @@ class ActivityMain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.statusBarColor=ContextCompat.getColor(this,R.color.black)
         activityMainBinding=ActivityMainBinding.inflate(layoutInflater)
+        activityMainBinding.tvAddProjects.setOnClickListener(this)
+        activityMainBinding.tvAddTasks.setOnClickListener(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         getUserLastLocation()
         // Set status bar color
@@ -300,6 +302,22 @@ class ActivityMain : AppCompatActivity() {
         } else {
             Toast.makeText(this, "No map application found.", Toast.LENGTH_SHORT).show()
         }*/
+    }
+
+    override fun onClick(v: View?) {
+        try {
+            when(v?.id){
+                R.id.tvAddProjects->{
+                    startActivity(Intent(this,ActivityAddProject::class.java))
+                }
+                R.id.tvAddTasks->{
+                    startActivity(Intent(this,ActivityAddTask::class.java))
+                }
+            }
+
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
     }
 
 }

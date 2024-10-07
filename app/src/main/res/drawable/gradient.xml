@@ -1,0 +1,16 @@
+<!-- res/drawable/four_color_gradient.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="45"
+                android:startColor="#80FF5733"
+            android:centerColor="#80FFC300"
+            android:centerX="0.50"
+            android:endColor="#DAF7A6"
+            />
+            <corners android:radius="0dp" />
+        </shape>
+    </item>
+</layer-list>

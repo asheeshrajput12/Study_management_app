@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:title="Add Task"
+        android:background="@color/colorPrimary"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_below="@id/toolbarAddTask"
+        android:id="@+id/tvProjectLabel"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Project"/>
+    <LinearLayout
+        android:layout_below="@id/tvProjectLabel"
+        android:id="@+id/llProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="10dp"
+        android:background="@drawable/rectangle">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            tools:listheader="@layout/item_task"/>
+    </LinearLayout>
+    <android.widget.Button
+        android:id="@+id/btnAddTask"
+        android:layout_below="@id/llProject"
+        android:layout_width="match_parent"
+        android:background="@drawable/rectangle"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/colorSecondary"
+        android:textColor="@color/white"
+        android:fontFamily="@font/robotomedium"
+        android:text="Add Task"/>
+    <View
+        android:id="@+id/vw"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/btnAddTask"
+        android:background="@drawable/dotted_line"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/vw"
+        android:layout_above="@id/btnSaveTask"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:id="@+id/llAddTask"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
+    <android.widget.Button
+        android:id="@+id/btnSaveTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_white"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorSecondary"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:fontFamily="@font/robotomedium"
+        android:text="Save TASK"/>
+
+</RelativeLayout>

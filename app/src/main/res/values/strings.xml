@@ -13,4 +13,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_my_notes">My Notes</string>
     <string name="title_my_dairy">My Dairy</string>
+    <string name="subject">Subject</string>
+    <string name="task_type">Task Type</string>
 </resources>

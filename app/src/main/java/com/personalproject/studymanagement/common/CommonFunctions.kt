@@ -39,7 +39,12 @@ object CommonFunctions {
             // Construct the URI for your content provider table
             val uri = Uri.parse("content://com.personalproject.studymanagement.provider/$strTable")
             val resolver=MyContentProvider()
-            val result=resolver.insert(uri,value)
+            val resultUri=resolver.insert(uri,value)
+            if (resultUri != null) {
+                println("Data inserted successfully: $resultUri")
+            } else {
+                println("Failed to insert data.")
+            }
         }catch (e:Exception){
             e.printStackTrace()
         }

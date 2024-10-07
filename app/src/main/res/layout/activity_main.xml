@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="end">
+    tools:openDrawer="start">
 
 
     <LinearLayout
@@ -111,11 +111,26 @@
                     android:background="@color/colorPrimary" />
 
                 <TextView
+                    android:id="@+id/tvAddTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:padding="20dp"
-                    android:text=". My Subject"
+                    android:text=". Add Task"
+                    android:textColor="@color/white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tvAddProjects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:padding="20dp"
+                    android:text=". Add Project"
                     android:textColor="@color/white" />
 
                 <View

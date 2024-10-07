@@ -1,27 +1,25 @@
 package com.personalproject.studymanagement.app
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.os.SystemClock
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
 import com.personalproject.studymanagement.R
 import com.personalproject.studymanagement.common.CommonFunctions
 import com.personalproject.studymanagement.databinding.ActivityAddProjectBinding
+import java.util.Calendar
 
 class ActivityAddProject : AppCompatActivity() {
     private lateinit var activityAddProjectBinding: ActivityAddProjectBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        activityAddProjectBinding = ActivityAddProjectBinding.inflate(layoutInflater)
-        setContentView(activityAddProjectBinding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        activityAddProjectBinding = DataBindingUtil.setContentView(this, R.layout.activity_add_project)
+
         CommonFunctions.addMandatoryAsterisk(activityAddProjectBinding.tvProjectNameLabel)
         CommonFunctions.addMandatoryAsterisk(activityAddProjectBinding.tvProjectDescriptionLabel)
         activityAddProjectBinding.btnSave.setOnClickListener {
@@ -42,5 +40,16 @@ class ActivityAddProject : AppCompatActivity() {
             Toast.makeText(this, "Please enter a project description", Toast.LENGTH_SHORT).show()
             return
         }
+
+        val values = ContentValues().apply {
+            put("txt_name", activityAddProjectBinding.etProjectName.text.toString())
+            put("description", activityAddProjectBinding.etProjectDescription.text.toString())
+            put("txt_created_date", Calendar.getInstance().time.toString())
+            put("txt_status", "Active")
+            put("txt_priority", "High")
+            put("txt_type", "Development")
+            put("txt_due_date", "2024-12-31")
+        }
+        CommonFunctions.insertData(this,"tbl_project",values)
     }
 }
