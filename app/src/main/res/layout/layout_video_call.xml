@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lets_start_call"
+        android:textSize="30sp"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/tvInputUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:hint="@string/enter_user_name"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="30sp"/>
+    <Button
+        android:id="@+id/btnLoginVideoCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"/>
+
+
+</LinearLayout>

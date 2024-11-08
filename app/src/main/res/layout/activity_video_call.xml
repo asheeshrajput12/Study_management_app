@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".app.ActivityVideoCall">
+
+    <TextView
+        android:id="@+id/tvCurrentUser"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="25sp"
+        android:text="Abc"/>
+    <EditText
+        android:id="@+id/etvTargetUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:gravity="center">
+
+        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+            android:id="@+id/btnSendVideoCall"
+            android:layout_width="60dp"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:layout_height="60dp"/>
+        <View
+            android:layout_width="40dp"
+            android:layout_height="match_parent"/>
+        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+            android:layout_width="60dp"
+            android:id="@+id/btnSendAudioCall"
+            android:layout_weight="1"
+            android:layout_height="60dp"/>
+    </LinearLayout>
+
+</LinearLayout>

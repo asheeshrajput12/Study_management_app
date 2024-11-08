@@ -5,14 +5,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
-
-
-
-
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
     <application
         android:allowBackup="true"
@@ -23,11 +21,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyManagement"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".app.ActivityDataShare"
+            android:exported="true"
+            android:theme="@style/Theme.StudyManagement">
+
+        </activity>
+        <activity
+            android:name=".app.ActivityVideoCall"
+            android:exported="false" />
         <activity
             android:name=".app.ActivityMain"
             android:exported="true"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +52,15 @@
             android:exported="false" />
         <activity
             android:name=".app.ActivityLogin"
-            android:exported="true" >
+            android:exported="true" />
+        <activity
+            android:name=".app.ActivityConverter"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <provider
@@ -64,7 +79,7 @@
 
         <meta-data
             android:name="com.google.android.gms.signin.internal.client_id"
-            android:value="YOUR_CLIENT_ID.apps.googleusercontent.com"/>
+            android:value="YOUR_CLIENT_ID.apps.googleusercontent.com" />
     </application>
 
 </manifest>

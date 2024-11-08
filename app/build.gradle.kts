@@ -44,7 +44,8 @@ android {
         viewBinding = true
         dataBinding= true
     }
-    dynamicFeatures += setOf(":my_notes", ":my_dairy")
+
+   /* dynamicFeatures += setOf(":my_notes", ":my_dairy")*/
 }
 
 dependencies {
@@ -62,7 +63,11 @@ dependencies {
     implementation(libs.googlePlaySign)
     implementation(libs.firebase.auth)
     implementation(libs.play.services.location)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+")
 }

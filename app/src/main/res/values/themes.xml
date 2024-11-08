@@ -2,11 +2,12 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.StudyManagement" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:statusBarColor">@color/colorSecondary</item>
-        <item name="android:windowLightStatusBar">true</item> <!-- Set to true for dark text on light status bar -->
+        <item name="android:windowLightStatusBar">true
+        </item> <!-- Set to true for dark text on light status bar -->
     </style>
 
     <style name="Theme.StudyManagement" parent="Base.Theme.StudyManagement" />
